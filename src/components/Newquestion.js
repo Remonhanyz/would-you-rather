@@ -1,12 +1,12 @@
 import { Component } from 'react'
-import { Addquestion } from './Addquestion'
-import { Navbar } from './Navbar'
+import Addquestion from './Addquestion'
+import Navigationbar from './Navigationbar'
 
 export class Newquestion extends Component {
     render() {
         return (
             <div>
-                <Navbar />
+                <Navigationbar />
                 <Addquestion />
             </div>
         )

@@ -1,13 +1,39 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(0,0,0,.03)
+
+}
+:root {
+ --bs-purple-light: rgb(155, 123, 212);
+}
+.navbar-dark .navbar-nav .nav-link.active{
+  background-color: rgb(255, 255, 255, .3);
+  border-radius: 3em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-link {
+  transition: color 0.25s ease-in-out, background-color 0.35s ease-in-out, border-color 0.35s ease-in-out, border-radius 0.45s ease-in-out;
+}
+
+.bg-primary {
+  --bs-bg-opacity: 1;
+  background-color: var(--bs-purple)!important;
+}
+
+.btn-primary {
+  background-color: var(--bs-purple)!important;
+  border-color: var(--bs-purple)!important;
+}
+
+
+
+.btn-check:focus + .btn-primary, .btn-primary:focus {
+  color: #fff;
+  border-color: var(--bs-purple-light)!important;
+  box-shadow: 0 0 0 0.25rem var(--bs-purple-light)!important;
+}
+
+.btn-primary:disabled, .btn-primary.disabled {
+  color: #fff;
+  background-color: var(--bs-purple-light)!important;
+  border-color: var(--bs-purple-light)!important;
 }

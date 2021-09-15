@@ -1,5 +1,5 @@
-import './App.css';
 import { Newquestion } from './components/Newquestion'
+
 
 function App() {
   return (
