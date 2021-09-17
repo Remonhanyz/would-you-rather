@@ -1,9 +1,32 @@
 body {
-  background-color: rgba(0,0,0,.03)
-
+  background-color: rgba(0,0,0,.03);
+  
 }
+
 :root {
- --bs-purple-light: rgb(155, 123, 212);
+  --bs-purple-light: rgb(155, 123, 212);
+  --bs-purple-lightest: rgb(177, 143, 235);
+}
+
+.loading{
+  background-color: var(--bs-purple-lightest);
+  height: 5px;
+  position: absolute;
+}
+.ms-6 {
+  margin-left: 11rem!important;
+}
+.border-primary{
+  border-color: var(--bs-purple-light)!important;
+}
+
+.no-decore {
+  text-decoration: none;
+  color: rgba(255,255,255,.55);
+}
+.no-decore:hover {
+  text-decoration: none;
+  /* color: rgba(255,255,255,.55); */
 }
 .navbar-dark .navbar-nav .nav-link.active{
   background-color: rgb(255, 255, 255, .3);
@@ -37,3 +60,4 @@ body {
   background-color: var(--bs-purple-light)!important;
   border-color: var(--bs-purple-light)!important;
 }
+
