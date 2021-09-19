@@ -1,7 +1,7 @@
 import { saveQuestion } from '../server/apis'
-
 export const RECIEVE_QUESTIONS = 'RECIEVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
+export const ADD_ANSWER = 'ADD_ANSWER'
 
 export function recieveQuestions(questions) {
     return {
@@ -16,6 +16,7 @@ function addQuestion(question) {
         question
     }
 }
+
 
 export function handleAddQuestion(action) {
     return (dispatch, getstate) => { //(dispatch, getstate) are returned to me by the thunk

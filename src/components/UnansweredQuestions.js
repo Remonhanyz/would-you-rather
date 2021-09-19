@@ -9,22 +9,22 @@ class UnansweredQuestions extends Component {
         const answersArr = Object.keys(users[authedUser].answers)
 
         return Object.keys(questions).filter((question) => {
-            for (var i = 0; i < answersArr.length; i++){
-                if(answersArr[i] === question){
+            for (var i = 0; i < answersArr.length; i++) {
+                if (answersArr[i] === question) {
                     return false
                 }
-        }
-        return true
+            }
+            return true
 
-    })
-}
-render() {
+        })
+    }
+    render() {
 
-    return (
-        this.filtering().map((question) => <PollCard question={question}  key={question}/>)
-        // <PollCard />
-    )
-}
+        return (
+            this.filtering().map((question) => <PollCard question={question} key={question} />)
+
+        )
+    }
 }
 
 function mapStateToProps({ authedUser, users, questions }) {

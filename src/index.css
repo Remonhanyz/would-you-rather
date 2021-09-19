@@ -6,12 +6,34 @@ body {
 :root {
   --bs-purple-light: rgb(155, 123, 212);
   --bs-purple-lightest: rgb(177, 143, 235);
-}
+  --bs-purple-lightests: rgba(177, 143, 235,.13);
 
+}
+.gap-6{
+  gap: 5rem !important;
+}
+.progress {
+  background-color: rgb(230, 230, 230);
+}
+.list-group-item.active{
+  background-color: var(--bs-purple-lightests)!important;
+  color:black;
+  border-color: var(--bs-purple-light)!important;
+}
+.list-group-item{
+  background-color: rgba(0,0,0,.03)!important;
+
+}
 .loading{
   background-color: var(--bs-purple-lightest);
   height: 5px;
   position: absolute;
+}
+.text-primary{
+  color: var(--bs-purple)!important;
+}
+.bg-primary-light{
+  background-color: var(--bs-purple-lightests)!important;
 }
 .ms-6 {
   margin-left: 11rem!important;
@@ -19,6 +41,7 @@ body {
 .border-primary{
   border-color: var(--bs-purple-light)!important;
 }
+
 
 .no-decore {
   text-decoration: none;

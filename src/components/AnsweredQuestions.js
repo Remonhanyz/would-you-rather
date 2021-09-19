@@ -6,7 +6,7 @@ class AnsweredQuestions extends Component {
     
     render() {
         return (
-            Object.keys(this.props.users[this.props.authedUser].answers).map((question)=> <PollCard question={question}  key={question}/>)
+            Object.keys(this.props.users[this.props.authedUser].answers).map((question)=> <PollCard question={question}  key={question} />)
         )
     }
 }
