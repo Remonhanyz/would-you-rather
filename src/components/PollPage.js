@@ -8,19 +8,19 @@ class PollPage extends Component {
     
     render() {
         const { users, questions, authedUser } = this.props
-        const question = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1)
-
+        const path = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1)
         return (
             <div>
-                {Object.keys(questions).includes(question)
+                {Object.keys(questions).includes(path)
                     ? <div>
                         {
-                            users[authedUser].questions.includes(question)
+                            Object.keys(users[authedUser].answers).includes(path)
                                 ? <PollAnswerPage />
-                                : <PollUnansweredPage update={()=>this.forceUpdate()} />
+                                : <PollUnansweredPage />
                         }
                     </div>
                     : <NotFound/>
+                    
                 }
             </div>
         )
@@ -33,6 +33,7 @@ function mapStateToProps({ authedUser, users, questions }) {
         authedUser,
         users,
         questions,
+
     }
 }
 

@@ -1,18 +1,17 @@
 import { Component } from 'react'
 import { Card } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import NotFound from './NotFound'
 
 class PollAnswerPage extends Component {
+
     render() {
         const { users, questions, authedUser } = this.props
         const question = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1)
         const user = users[questions[question].author]
         const optionOne = questions[question].optionOne.votes.length
-        const optionTwo = questions[question].optionOne.votes.length
-        const presentOne = optionOne / (optionOne + optionTwo) * 100
-        const presentTwo = optionTwo / (optionOne + optionTwo) * 100
-
+        const optionTwo = questions[question].optionTwo.votes.length
+        const presentOne = Math.round(optionOne / (optionOne + optionTwo) * 100)
+        const presentTwo = Math.round(optionTwo / (optionOne + optionTwo) * 100)
 
         return (
             <div>
@@ -29,7 +28,7 @@ class PollAnswerPage extends Component {
                                     <div className='col-9'>
                                         <div className=' border-start border-2 border-primary row justify-content-center' style={{ 'minHeight': "135px" }}>
                                             <Card.Title className='fw-bold pt-3 text-center fs-2 col-8'>Results:</Card.Title>
-                                            <Card.Text className='mt-3 col-12'>
+                                            <div className='mt-3 col-12'>
 
                                                 <div className={`card ${users[authedUser].answers[question] === 'optionOne' && 'text-primary bg-primary-light'} border-primary mb-3`}>
                                                     <div className="card-body">
@@ -56,13 +55,13 @@ class PollAnswerPage extends Component {
                                                 </div>
 
 
-                                            </Card.Text>
+                                            </div>
                                         </div>
                                     </div>
                                 </Card.Body>
                             </Card>
                         </div >
-                        : <NotFound />
+                        : null
                 }
             </div>
         )

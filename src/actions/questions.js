@@ -18,9 +18,9 @@ function addQuestion(question) {
 }
 
 
-export function handleAddQuestion(action) {
-    return (dispatch, getstate) => { //(dispatch, getstate) are returned to me by the thunk
-        return saveQuestion(action)
+export function handleAddQuestion(question) {
+    return (dispatch) => { //(dispatch, getstate) are returned to me by the thunk
+        return saveQuestion(question)
             .then((question) => {
                 dispatch(addQuestion(question))
             })

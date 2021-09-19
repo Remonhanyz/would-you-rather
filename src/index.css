@@ -20,9 +20,8 @@ body {
   color:black;
   border-color: var(--bs-purple-light)!important;
 }
-.list-group-item{
-  background-color: rgba(0,0,0,.03)!important;
-
+.z-1500{
+  z-index: 1500;
 }
 .loading{
   background-color: var(--bs-purple-lightest);

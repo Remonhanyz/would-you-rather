@@ -10,9 +10,9 @@ class LeaderCard extends Component {
         return (
             <Card className='mb-4'>
                 <Card.Body>
-                    <span class="position-absolute top-50 start-0 fs-2 translate-middle badge rounded-pill bg-primary">
+                    <span className="position-absolute top-50 start-0 fs-2 translate-middle badge rounded-pill bg-primary">
                         {order}
-                        <span class="visually-hidden">unread messages</span>
+                        <span className="visually-hidden">unread messages</span>
                     </span>
                     <div className="row row-cols-3 g-3">
                         <div className="col col-sm-3 d-flex justify-content-center align-items-center">
@@ -21,7 +21,7 @@ class LeaderCard extends Component {
                         <div className='col col-sm-6 ps-md-5 ps-sm-3 border-start border-2 border-primary' style={{ 'minHeight': "135px" }}>
                             <div>
                                 <Card.Title className='fs-2 fw-bold pt-3'>{users[user].name}</Card.Title>
-                                <Card.Text className='fs-5 row mt-3'>
+                                <div className='card-text fs-5 row mt-3'>
                                     <div className='col-sm-9 mb-2'>
                                         Answered questions
                                     </div>
@@ -38,18 +38,18 @@ class LeaderCard extends Component {
 
 
 
-                                </Card.Text >
+                                </div >
                             </div>
                         </div>
                         <div className="col col-sm-3 d-flex justify-content-center align-items-center">
                             <Card border="primary" style={{ width: '8rem' }} className='text-center'>
                                 <Card.Header className='fs-4 bg-primary text-white'>Score</Card.Header>
                                 <Card.Body>
-                                    <Card.Text className='fs-1 fw-bold'>
+                                    <div className='card-text fs-1 fw-bold'>
                                         <div>
                                             {score}
                                         </div>
-                                    </Card.Text>
+                                    </div>
                                 </Card.Body>
                             </Card>
                         </div>

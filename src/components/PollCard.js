@@ -33,8 +33,7 @@ class PollCard extends Component {
 function mapStateToProps({ users, questions }, { question }) {
     return {
         text: questions[question].optionOne.text,
-        user: users[questions[question].author],
-
+        user: users[questions[question].author]
     }
 }
 

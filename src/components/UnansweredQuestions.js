@@ -18,11 +18,27 @@ class UnansweredQuestions extends Component {
 
         })
     }
+    sortQuestions(questionsArray) {
+        const questionsScores = {}
+        let { questions } = this.props
+        
+        var sortable = {};
+        
+        for (let question in questions) {
+            if (questionsArray.includes(question))
+                questionsScores[question] = questions[question].timestamp
+        }
+        
+        for (let question in questionsScores) {
+            sortable[question] = questionsScores[question];
+        }
+        sortable = Object.keys(sortable).sort((a, b) => sortable[b] - sortable[a])
+        return sortable
+    }
     render() {
 
         return (
-            this.filtering().map((question) => <PollCard question={question} key={question} />)
-
+            this.sortQuestions(this.filtering()).map((question) => <PollCard question={question} key={question}/>)
         )
     }
 }

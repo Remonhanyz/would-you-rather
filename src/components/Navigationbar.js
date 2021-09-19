@@ -2,19 +2,21 @@ import { Navbar, Container } from 'react-bootstrap';
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-
+import { setAuthedUser } from '../actions/authedUser'
 
 class Navigationbar extends Component {
 
   render() {
-    
+    const { dispatch } = this.props
 
     return (
       <Navbar collapseOnSelect expand="lg" sticky="top" bg="primary" variant="dark">
         <Container className='ms-5'>
-          <Navbar.Brand className="fs-4" style={{ 'fontFamily': 'Dancing Script' }} href="#">
-            Would You Rather
-          </Navbar.Brand>
+          <NavLink exact to="/" className='nav-link px-3'>
+            <div className="fs-4 navbar-brand" style={{ 'fontFamily': 'Dancing Script' }}>
+              Would You Rather
+            </div>
+          </NavLink>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <ul className="navbar-nav ms-4 me-auto">
@@ -41,16 +43,19 @@ class Navigationbar extends Component {
               </span>
 
               <img src={this.props.avatar} alt="current user" width="30" height="30" className="ms-3 me-3 mt-1 rounded-circle" />
-              <li className="nav-item">
-                <NavLink exact to="/" className='nav-link px-3'>
+              <li >
+                <div className="nav-item nav-link" onClick={() => dispatch(setAuthedUser(null))} >
+
                   Logout
-                </NavLink>
+                </div> 
+
+
               </li>
             </ul>
-            
+
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar >
 
     )
   }

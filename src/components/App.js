@@ -7,10 +7,10 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Home from './Home'
 import Leaders from './Leaders'
 import PollPage from './PollPage'
-import PollAnswerPage from './PollAnswerPage'
 import Navigationbar from './Navigationbar'
 import Login from './Login'
 import NotFound from './NotFound';
+
 
 class App extends Component {
 
@@ -19,27 +19,27 @@ class App extends Component {
   }
 
   render() {
+
     return (
-      <div>
+      <div >
         <LoadingBar className="loading" />
 
         <BrowserRouter>
 
-          {this.props.loading === true
-            ? null
-            : <div>
-              {<div>
+
+            {this.props.loading === true
+              ? <Route component={Login} />
+              : <div>
                 <Navigationbar />
                 <Route path='/' exact component={Home} />
-                <Route path='/question/:id' exact component={PollPage} />
-                <Route path='/question/answer/:id' exact component={PollAnswerPage} />
+                <Route path='/question/:id' component={PollPage} />
                 <Route path='/add' component={Newquestion} />
                 <Route path='/leaderboard' component={Leaders} />
-                <Route path='/login' component={Login} />
-                {/* <Route component={NotFound} /> */}
-              </div>}
-            </div>
-          }
+                <Route path='/notfound' component={NotFound} />
+                {/* <Route render={() => <Redirect to="/" />} /> */}
+              </div>
+            }
+
         </BrowserRouter>
       </div>
     )
